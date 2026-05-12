@@ -1,0 +1,16 @@
+node_modules
+dist
+build
+coverage
+.env
+*.log
+*.csv
+
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+client/dist
+server/dist
+
+.git
