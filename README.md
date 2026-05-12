@@ -1,73 +1,156 @@
-# React + TypeScript + Vite
+# B2C Real Estate Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript application for a **B2C real estate platform** where users can browse properties for rent or sale, save favorites, and send viewing/contact requests.
 
-Currently, two official plugins are available:
+The project starts with **JSON Server** as a mock backend. The real backend will be implemented later by a backend developer, so the frontend is structured to make the API layer easy to replace.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Project Goal
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal of this project is to build a realistic real estate web application with:
 
-## Expanding the ESLint configuration
+- property listings for rent and sale
+- public browsing and filtering
+- authentication
+- customer features
+- admin dashboard
+- property management
+- inquiry/viewing request flow
+- scalable frontend architecture
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Frontend
+- React
+- TypeScript
+- Vite
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Routing
+- React Router
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Mock Backend / Database
+- JSON Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### API Client
+- Axios
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Server State Management
+- TanStack Query
+
+### Client State Management
+- Redux Toolkit
+
+### Forms
+- Formik
+
+### Validation
+- Yup
+
+### Styling
+- Tailwind CSS
+
+### Testing
+- Vitest
+
+### CI/CD Later
+- GitHub Actions
+
+---
+
+## User Roles
+
+### Guest
+Unauthenticated user.
+
+Can:
+- browse properties
+- search and filter listings
+- view property details
+- register or login
+
+Cannot:
+- save favorites
+- send viewing requests
+- access customer pages
+- access admin dashboard
+
+---
+
+### Customer
+Authenticated user.
+
+Can:
+- browse properties
+- save/remove favorites
+- send viewing/contact requests
+- manage profile
+
+Cannot:
+- manage properties
+- manage users
+- access admin dashboard
+
+---
+
+### Admin
+Authenticated admin user.
+
+Can:
+- manage properties
+- create/edit/delete listings
+- manage property status
+- view customer inquiries
+- update inquiry status
+- manage users
+- access admin dashboard
+
+---
+
+## Main Features
+
+### Public Storefront
+- home page
+- property listing page
+- property details page
+- rent/sale filtering
+- city search
+- price filtering
+- room filtering
+- sorting by price or newest
+
+### Authentication
+- login
+- register
+- logout
+- persisted session
+- protected routes
+- admin-only routes
+
+### Customer Features
+- favorites
+- viewing/contact requests
+- profile page
+- inquiry history
+
+### Admin Features
+- admin dashboard
+- property CRUD
+- user management
+- inquiry management
+- property status updates
+
+---
+
+## Main Entities
+
+The mock database will include:
+
+- users
+- properties
+- favorites
+- inquiries
+- cities
+- property types
