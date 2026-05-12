@@ -24,38 +24,49 @@ The goal of this project is to build a realistic real estate web application wit
 ## Tech Stack
 
 ### Frontend
+
 - React
 - TypeScript
 - Vite
 
 ### Routing
+
 - React Router
 
 ### Mock Backend / Database
+
 - JSON Server
 
 ### API Client
+
 - Axios
 
 ### Server State Management
+
 - TanStack Query
 
 ### Client State Management
+
 - Redux Toolkit
 
 ### Forms
+
 - Formik
 
 ### Validation
+
 - Yup
 
 ### Styling
+
 - Tailwind CSS
 
 ### Testing
+
 - Vitest
 
 ### CI/CD Later
+
 - GitHub Actions
 
 ---
@@ -63,15 +74,18 @@ The goal of this project is to build a realistic real estate web application wit
 ## User Roles
 
 ### Guest
+
 Unauthenticated user.
 
 Can:
+
 - browse properties
 - search and filter listings
 - view property details
 - register or login
 
 Cannot:
+
 - save favorites
 - send viewing requests
 - access customer pages
@@ -80,15 +94,18 @@ Cannot:
 ---
 
 ### Customer
+
 Authenticated user.
 
 Can:
+
 - browse properties
 - save/remove favorites
 - send viewing/contact requests
 - manage profile
 
 Cannot:
+
 - manage properties
 - manage users
 - access admin dashboard
@@ -96,9 +113,11 @@ Cannot:
 ---
 
 ### Admin
+
 Authenticated admin user.
 
 Can:
+
 - manage properties
 - create/edit/delete listings
 - manage property status
@@ -112,6 +131,7 @@ Can:
 ## Main Features
 
 ### Public Storefront
+
 - home page
 - property listing page
 - property details page
@@ -122,6 +142,7 @@ Can:
 - sorting by price or newest
 
 ### Authentication
+
 - login
 - register
 - logout
@@ -130,12 +151,14 @@ Can:
 - admin-only routes
 
 ### Customer Features
+
 - favorites
 - viewing/contact requests
 - profile page
 - inquiry history
 
 ### Admin Features
+
 - admin dashboard
 - property CRUD
 - user management

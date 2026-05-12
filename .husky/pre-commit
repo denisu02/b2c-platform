@@ -1,0 +1,8 @@
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch_name" = "main" ]; then
+    echo "Committing directly to main is blocked. Create a development branch first."
+    exit 1
+fi
+
+npm run lint:staged
