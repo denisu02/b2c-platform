@@ -1,0 +1,15 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "Cozy Apartment in Downtown",
+      "description": "A cozy 2-bedroom apartment located in the heart of the city.",
+      "price": 1200,
+      "location": "Downtown"
+    }
+  ],
+  "users": [],
+  "favorites": [],
+  "cities": [],
+  "propertyTypes": []
+}
