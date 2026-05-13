@@ -27,3 +27,25 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# Vite cache
+.vite/
+client/.vite/
+
+# Nested app folders
+client/node_modules/
+client/dist/
+client/dist-ssr/
+client/coverage/
+client/.eslintcache
+client/*.tsbuildinfo
+
+# Server runtime/cache, if ever created
+server/node_modules/
+server/*.log
+
+.vite/
+client/.vite/
+
+client/node_modules/
+client/dist/

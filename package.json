@@ -1,49 +1,15 @@
 {
   "name": "b2c-platform",
   "private": true,
-  "version": "0.1.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "lint:staged": "lint-staged",
-    "prettier:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md,html}\"",
-    "preview": "vite preview",
-    "prepare": "husky",
-    "typecheck": "tsc -b --pretty",
+    "dev": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "lint": "npm --prefix client run lint",
+    "lint:staged": "npm --prefix client run lint:staged",
+    "typecheck": "npm --prefix client run typecheck",
+    "prettier:check": "node client/node_modules/prettier/bin/prettier.cjs --config .prettierrc --ignore-path .prettierignore --check \"client/**/*.{js,jsx,ts,tsx,json,css,scss,md,html}\" \"server/**/*.{json,md}\"",
+    "prettier:write": "node client/node_modules/prettier/bin/prettier.cjs --config .prettierrc --ignore-path .prettierignore --write \"client/**/*.{js,jsx,ts,tsx,json,css,scss,md,html}\" \"server/**/*.{json,md}\"",
     "verify": "npm run typecheck && npm run lint && npm run prettier:check",
-    "version:check": "node ./scripts/check-version-bump.mjs"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,css,scss,md,html}": "prettier --write"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.3.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "react-router": "^7.15.0",
-    "tailwindcss": "^4.3.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@types/node": "^24.12.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^17.0.4",
-    "prettier": "3.8.3",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.58.2",
-    "vite": "^8.0.9"
+    "server": "npm --prefix client run server"
   }
 }
